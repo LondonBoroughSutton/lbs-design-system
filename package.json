@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@benwatsonuk/lbs-frontend": "^2.0.9",
     "acorn": "^6.4.1",
     "ajv": "^6.10.0",
     "autoprefixer": "^9.5.1",

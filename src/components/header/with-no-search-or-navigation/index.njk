@@ -1,0 +1,10 @@
+---
+title: Header with no search or navigation
+layout: layout-example.njk
+---
+{% from "LBS/components/header/macro.njk" import lbsHeader %}
+
+{{ lbsHeader({
+  "navigation": false,
+  "search": false
+}) }}

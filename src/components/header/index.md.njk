@@ -8,21 +8,19 @@ layout: layout-pane.njk
 
 {% from "_example.njk" import example %}
 
-The GOV.UK header shows users that they are on GOV.UK and which service they are using.
+The LBS header shows users that they are on sutton.gov.uk and can be used to show 'global' navigation and search functionality.
 
 {{ example({group: "components", item: "header", example: "default", id: "default-1", html: true, nunjucks: true, open: false}) }}
 
 ## When to use this component
 
-You must use the GOV.UK header at the top of every page if your service is being hosted on one of these domains:
+You should use the LBS header at the top of every page if your service is being hosted on one of these domains:
 
-- gov.uk/myservice
-- myservice.service.gov.uk
-- myblog.blog.gov.uk
+- sutton.gov.uk
 
 ## When not to use this component
 
-You must not use the GOV.UK header if your service is not being hosted on one of the above domains.
+You likely should not use the LBS header if your service is not being hosted on one of the above domains.
 
 
 ## How it works
@@ -33,14 +31,20 @@ Use the default header if your service has 5 pages or fewer.
 
 {{ example({group: "components", item: "header", example: "default", titleSuffix: "second", html: true, nunjucks: true, open: false}) }}
 
-### Header with service name
+### Header with no navigation
 
-Use the header with a service name if your service is more than 5 pages long - this can help users understand which service they are using.
+Use the header with no navigation if you need to include the search capability.
 
-{{ example({group: "components", item: "header", example: "with-service-name", html: true, nunjucks: true, open: false}) }}
+{{ example({group: "components", item: "header", example: "with-no-navigation", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-### Header with service name and navigation
+### Header with no search
 
-Use the header with navigation if you need to include basic navigation, contact or account management links.
+Use the header with no search if you need to include the navigation capability but not search.
 
-{{ example({group: "components", item: "header", example: "with-service-name-and-navigation", html: true, nunjucks: true, open: false, size: "s"}) }}
+{{ example({group: "components", item: "header", example: "with-no-search", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+### Header with no search or navigation
+
+Use the header with no search or navigation capability.
+
+{{ example({group: "components", item: "header", example: "with-no-search-or-navigation", html: true, nunjucks: true, open: false, size: "s"}) }}

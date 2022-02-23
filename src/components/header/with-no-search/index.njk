@@ -1,24 +1,11 @@
 ---
-title: Header
+title: Header with no search
 layout: layout-example.njk
 ---
 {% from "LBS/components/header/macro.njk" import lbsHeader %}
 
 {{ lbsHeader({
-  "searchItems": [
-    {
-      "href": "#1",
-      "text": "Popular search 1"
-    },
-    {
-      "href": "#2",
-      "text": "Popular search 2"
-    },
-    {
-      "href": "#3",
-      "text": "Popular search 3"
-    }
-  ],
+  "search": false,
   "navigation": [
     {
       "href": "#1",

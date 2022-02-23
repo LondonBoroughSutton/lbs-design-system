@@ -1,0 +1,25 @@
+---
+title: Page header with a featured video
+layout: layout-example.njk
+---
+
+{% from "LBS/components/page-header/macro.njk" import lbsPageHeader %}
+
+{{ lbsPageHeader({
+  "heading": "Test page example",
+  "breadCrumbItems": [
+    {
+      "text": "Home",
+      "href": "#"
+    },
+    {
+      "text": "Example",
+      "href": "#"
+    }
+  ],
+  "description": "Page header with a hero video, likely used for campaigns",
+  "descriptionPosition": "inside",
+  "heroVideo": {
+    "url": "https://www.youtube.com/embed/nPW49lt2sCw"
+  }
+}) }}

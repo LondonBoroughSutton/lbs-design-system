@@ -1,0 +1,16 @@
+---
+title: Featured card
+layout: layout-example.njk
+---
+{% from "LBS/components/card/macro.njk" import lbsCard %}
+
+{{ lbsCard({
+  "featureCard": true,
+  "clickable": true,
+  "image": "/assets/img/home-image--1.jpg",
+  "heading": {
+    "title": "Example heading",
+    "href": "#"
+  },
+  "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
+}) }}

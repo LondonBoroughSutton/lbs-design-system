@@ -1,8 +1,10 @@
 ---
-title: Footer
+title: Footer with feedback mechanisms
 layout: layout-example.njk
 ---
 
 {% from "LBS/components/footer/macro.njk" import lbsFooter %}
 
-{{ lbsFooter({}) }}
+{{ lbsFooter({
+  "pageFeedback": true
+}) }}

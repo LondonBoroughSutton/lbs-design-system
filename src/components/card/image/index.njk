@@ -1,0 +1,15 @@
+---
+title: Card with image
+layout: layout-example.njk
+---
+{% from "LBS/components/card/macro.njk" import lbsCard %}
+
+{{ lbsCard({
+  "clickable": true,
+  "image": "/assets/img/home-image--1.jpg",
+  "heading": {
+    "title": "Example heading",
+    "href": "#"
+  },
+  "cardBodyHtml": "This is a description"
+}) }}

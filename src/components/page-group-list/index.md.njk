@@ -1,0 +1,23 @@
+---
+title: Page Group List
+description: Use the page list to display pages in a group of articles.
+section: Components
+aliases:
+layout: layout-pane.njk
+---
+
+{% from "_example.njk" import example %}
+
+Use the page list component to show pages in a group of articles and the current article being shown
+
+{{ example({group: "components", item: "page-group-list", example: "default", html: true, nunjucks: true, open: false}) }}
+
+## When to use this component
+
+This component should be used on `groups of articles`.
+
+## How it works
+
+The page list shows all pages in a related section and allows users to gain an overview and navigate easily between pages if necessary.
+
+{{ example({group: "components", item: "page-group-list", example: "default", html: true, nunjucks: true, open: false, titleSuffix: "second"}) }}

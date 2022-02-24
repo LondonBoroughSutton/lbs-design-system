@@ -1,0 +1,16 @@
+---
+title: Card with video
+layout: layout-example.njk
+---
+{% from "LBS/components/card/macro.njk" import lbsCard %}
+
+{{ lbsCard({
+  "featureCard": true,
+  "clickable": true,
+  "video": "https://www.youtube.com/embed/nPW49lt2sCw",
+  "heading": {
+    "title": "Example heading",
+    "href": "#"
+  },
+  "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
+}) }}

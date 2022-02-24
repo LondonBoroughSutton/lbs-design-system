@@ -13,6 +13,8 @@ statusMessage: This component is currently experimental because <a class="govuk-
 
 The tabs component lets users navigate between related sections of content, displaying one section at a time.
 
+There is a LBS specific tab component that behaves in a particular way across various devices but use of the GOV.UK tabs is also encouraged.
+
 {{ example({group: "components", item: "tabs", example: "default", html: true, nunjucks: true, open: false, size: "xl"}) }}
 
 ## When to use this component
@@ -45,6 +47,8 @@ Test your content without tabs first. Consider if it’s better to:
 
 ## Decide between using tabs, accordion and details
 
+The LBS tabs differ significantly from the GOV.UK version in that they behave as an accordion on smaller viewports and progress to tabs as screen real estate allows. The rationale for this is that if it makes sense to group content on larger viewports, than the initial hypothesis and rounds of user research thus far suggest that it also makes sense to do this on smaller screen real estate.
+
 Tabs, [accordions](/components/accordion/), and [details](/components/details/) all hide sections of content which a user can choose to reveal.
 
 If you decide to use one of these components, consider if:
@@ -55,13 +59,18 @@ If you decide to use one of these components, consider if:
 
 ## How it works
 
-There are 2 ways to use the tabs component. You can use HTML or, if you’re using [Nunjucks](https://mozilla.github.io/nunjucks/) or the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/), you can use the Nunjucks macro.
+There are 2 ways to use the tabs component. You can use HTML or, if you’re using [Nunjucks](https://mozilla.github.io/nunjucks/) or the LBS Prototype Kit, you can use the Nunjucks macro.
 
 {{ example({group: "components", item: "tabs", example: "default", html: true, nunjucks: true, open: false, size: "xl", titleSuffix: "second"}) }}
 
 The tabs component uses JavaScript. When JavaScript is not available, users will see the tabbed content on a single page, in order from first to last, with a table of contents that links to each of the sections.
 
-This is also how the component currently behaves on small screens, though more research is needed on this.
+This is also how the component  currently behaves on small screens, though more research is needed on this.
+
+## GOV.UK tabs
+
+{{ example({group: "components", item: "tabs", example: "govuk", html: true, nunjucks: true, open: false, size: "xl"}) }}
+
 
 ### Use clear labels
 

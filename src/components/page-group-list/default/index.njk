@@ -1,0 +1,24 @@
+---
+title: Page Group List
+layout: layout-example.njk
+---
+
+{% from "LBS/components/page-group-list/macro.njk" import lbsPageGroupList %}
+
+{{ lbsPageGroupList({
+  "linkItems": [
+    {
+      "text": "Item 1",
+      "href": "#"
+    },
+    {
+      "text": "Item 2",
+      "href": "#",
+      "current": true
+    },
+    {
+      "text": "Item 3",
+      "href": "#"
+    }
+  ]
+}) }}

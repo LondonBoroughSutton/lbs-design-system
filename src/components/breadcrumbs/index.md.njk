@@ -11,6 +11,12 @@ layout: layout-pane.njk
 
 The breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
 
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+    html: "The content on this page describes GOV.UK usage. The majority of pages on Sutton.gov.uk make use of the `page header` and breadcrumbs are included within this component."
+}) }}
+
 {{ example({group: "components", item: "breadcrumbs", example: "default", html: true, nunjucks: true, open: false}) }}
 
 ## When to use this component

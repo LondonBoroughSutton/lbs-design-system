@@ -1,0 +1,29 @@
+---
+title: Page Group Navigation
+description: Use the page group navigation to provide links to previous and net items in a navigation group.
+section: Components
+aliases:
+layout: layout-pane.njk
+---
+
+{% from "_example.njk" import example %}
+
+Use the page group navigation to provide links to previous and net items in a navigation group.
+
+{{ example({group: "components", item: "page-group-navigation", example: "default", html: true, nunjucks: true, open: false}) }}
+
+## When to use this component
+
+This component should be used on `groups of articles`.
+
+## Inline navigation
+
+The default behaviour is to 'stack' options, you can also display navigation items 'inline'.
+
+{{ example({group: "components", item: "page-group-navigation", example: "inline", html: true, nunjucks: true, open: false}) }}
+
+## How it works
+
+The page group navigation provides linear navigation to the previous and next articles in a series/group of articles.
+
+{{ example({group: "components", item: "page-group-navigation", example: "default", html: true, nunjucks: true, open: false, titleSuffix: "second"}) }}

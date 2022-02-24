@@ -19,9 +19,9 @@ Use the footer at the bottom of every page of your service.
 
 ## How it works
 
-You can add links to:
-- your department’s page on GOV.UK
-- other language options
+You can add links to the service specific:
+- cookie policy
+- accessibility policy
 - terms and conditions
 - privacy policy
 
@@ -29,16 +29,6 @@ You can add links to:
 
 {{ example({group: "components", item: "footer", example: "default", titleSuffix: "second", html: true, nunjucks: true, open: false, size: "m"}) }}
 
-### Footer with secondary navigation
+### Footer with page feedback
 
-{{ example({group: "components", item: "footer", example: "with-navigation", html: true, nunjucks: true, open: false, size: "xl"}) }}
-
-### Footer with links to meta information
-
-You can also include links to meta information about a site, like cookies and contact details in the footer, like this:
-
-{{ example({group: "components", item: "footer", example: "with-meta", html: true, nunjucks: true, open: false, size: "m"}) }}
-
-### Footer with secondary navigation and links to meta information
-
-{{ example({group: "components", item: "footer", example: "full", html: true, nunjucks: true, open: false, size: "xl"}) }}
+{{ example({group: "components", item: "footer", example: "feedback", titleSuffix: "second", html: true, nunjucks: true, open: false, size: "m"}) }}

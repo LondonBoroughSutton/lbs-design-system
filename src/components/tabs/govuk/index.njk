@@ -1,12 +1,13 @@
 ---
-title: Tabs
+title: GOV.UK Tabs
 layout: layout-example.njk
 ---
 
-{% from "LBS/components/tabs/macro.njk" import lbsTabs %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pastDayHtml %}
+<h2 class="govuk-heading-l">Past day</h2>
 {{ govukTable({
   head: [
     {
@@ -58,6 +59,7 @@ layout: layout-example.njk
 {% endset -%}
 
 {% set pastWeekHtml %}
+<h2 class="govuk-heading-l">Past week</h2>
 {{ govukTable({
   head: [
     {
@@ -109,6 +111,7 @@ layout: layout-example.njk
 {% endset -%}
 
 {% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Past month</h2>
 {{ govukTable({
   head: [
     {
@@ -160,6 +163,7 @@ layout: layout-example.njk
 {% endset -%}
 
 {% set pastYearHtml %}
+<h2 class="govuk-heading-l">Past year</h2>
 {{ govukTable({
   head: [
     {
@@ -210,23 +214,35 @@ layout: layout-example.njk
 }) }}
 {% endset -%}
 
-{{ lbsTabs({
+{{ govukTabs({
   items: [
     {
       label: "Past day",
-      content: pastDayHtml
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
     },
     {
       label: "Past week",
-      content: pastWeekHtml
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
     },
     {
       label: "Past month",
-      content: pastMonthHtml
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
     },
     {
       label: "Past year",
-      content: pastYearHtml
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
     }
   ]
 }) }}

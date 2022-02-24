@@ -1,0 +1,16 @@
+---
+title: News card
+layout: layout-example.njk
+---
+{% from "LBS/components/card/macro.njk" import lbsCard %}
+
+{{ lbsCard({
+  "news": true,
+  "clickable": true,
+  "image": "/assets/img/home-image--1.jpg",
+  "heading": {
+    "title": "Example heading",
+    "href": "#"
+  },
+  "cardBodyHtml": "This is a description"
+}) }}

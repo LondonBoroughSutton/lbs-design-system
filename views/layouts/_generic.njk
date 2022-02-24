@@ -3,7 +3,7 @@
 {% set htmlClasses = 'no-js' %}
 {% set assetUrl = 'https://design-system.service.gov.uk/assets' %}
 
-{% block pageTitle %}{{ title }} – GOV.UK Design System{% endblock %}
+{% block pageTitle %}{{ title }} – LBS Design System{% endblock %}
 
 {% block head %}
   {% if not ENVIRONMENT or ENVIRONMENT != 'production' %}
@@ -22,6 +22,17 @@
   <!--<![endif]-->
   <script src="/javascripts/vendor/modernizr.js"></script>
 {% endblock %}
+
+{% set lbsAssetPath = '/assets/img/favicons' %}
+
+    {% block headIcons %}
+      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ lbsAssetPath | default('/assets') }}/favicon.ico" type="image/x-icon">
+      <link rel="mask-icon" href="{{ lbsAssetPath | default('/assets') }}/govuk-mask-icon.svg" color="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ lbsAssetPath | default('/assets') }}/govuk-apple-touch-icon-180x180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="{{ lbsAssetPath | default('/assets') }}/govuk-apple-touch-icon-167x167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="{{ lbsAssetPath | default('/assets') }}/govuk-apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" href="{{ lbsAssetPath | default('/assets') }}/govuk-apple-touch-icon.png">
+    {% endblock %}
 
 {% block bodyStart %}
   <!--[if gte IE 9]><!-->

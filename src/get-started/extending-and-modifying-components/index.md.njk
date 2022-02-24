@@ -7,7 +7,7 @@ order: 5
 description: What to do when you want to extend or modify a component in production.
 ---
 
-You might need to extend or modify components in the GOV.UK Design System from time to time. For example to:
+You might need to extend or modify components in the LBS Design System from time to time. For example to:
 
 - improve them based on user research
 - meet a specific user need in your service
@@ -17,18 +17,16 @@ Consider whether your changes:
 - allow you to safely install updates from the GOV.UK Design System
 - reduce the risk of technical debt
 
-When you extend or modify components in the GOV.UK Design System you create potential risk. For example, your code or service may break when you install Design System updates.
+When you extend or modify components in the LBS Design System you create potential risk. For example, your code or service may break when you install Design System updates.
 
 You can help reduce potential risk to your code by:
 
 - using [override classes](#start-with-override-classes)
-- not [overwriting GOV.UK Design System code](#avoid-overwriting-gov-uk-design-system-code)
 - using a [unique prefix for component names][prefix]
 - creating [custom override classes for multiple components](#custom-override-classes)
 - using BEM for [small modifications to components](#small-modifications-to-components)
-- forking components when you are making [large modifications](#large-modifications-to-components)
 
-The GOV.UK Design System team uses many of these techniques to make sure code in the GOV.UK Design System does not unintentionally break your application code.
+The LBS Design System team uses many of these techniques to make sure code in the LBS Design System does not unintentionally break your application code.
 
 ## Start with override classes
 
@@ -40,9 +38,9 @@ For example, you can make changes to:
 - font size with [font override classes](/styles/typography/#font-override-classes)
 - width with [width override classes](/styles/spacing/#width-override-classes)
 
-## Avoid overwriting GOV.UK Design System code
+## Avoid overwriting LBS Design System code
 
-If you make a modification involving CSS you might decide to write a selector that targets a GOV.UK Design System class and change its CSS properties.
+If you make a modification involving CSS you might decide to write a selector that targets a LBS Design System class and change its CSS properties.
 
 This will work in the short term but may break if you install an update relying on the component’s previous behaviour.
 
@@ -63,13 +61,13 @@ For example, if you want to override the button component you could do the follo
 }
 ```
 
-This would work in the short term, but if the GOV.UK Design System team changes how the button component works it could break when you update your service. For examples like this, consider using [small modifications to components](#small-modifications-to-components).
+This would work in the short term, but if the LBS or GOV.UK Design System team changes how the button component works it could break when you update your service. For examples like this, consider using [small modifications to components](#small-modifications-to-components).
 
 ## Use a unique prefix for component names
 
-The GOV.UK Design System team uses prefixes, sometimes called [namespacing](https://techterms.com/definition/namespace), to make sure the code in the GOV.UK Design System does not unintentionally break your application code.
+The LBS and GOV.UK Design System team uses prefixes, sometimes called [namespacing](https://techterms.com/definition/namespace), to make sure the code in the LBS and GOV.UK Design System does not unintentionally break your application code.
 
-Styles, components and patterns in the GOV.UK Design System use the `govuk-` prefix.
+Styles, components and patterns in the LBS or GOV.UK Design System use the `govuk-` prefix.
 
 When writing code for your application, use a different prefix, like `app-`.
 

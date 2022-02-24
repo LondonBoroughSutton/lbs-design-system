@@ -1,91 +1,368 @@
 ---
 title: Colour
-description: Always use the GOV.UK colour palette
+description: Always use the LBS colour palette
 section: Styles
 aliases: palette
 backlog_issue_id: 38
 layout: layout-pane.njk
 ---
 
-Always use the GOV.UK colour palette.
+Always use the LBS colour palette.
+
+The primary and secondary palette are part of the organisation's core brand guidelines. The GOV.UK palette is used with
+a few overrides provided - these are shown below.
 
 ## Colour contrast
-You must make sure that the contrast ratio of text and interactive elements in
-your service meets [level AA of the Web Content Accessibility Guidelines
-(WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
-## Main colours
-
-If you are using GOV.UK Frontend or the GOV.UK Prototype Kit, use the [Sass
-variables](https://frontend.design-system.service.gov.uk/sass-api-reference/#colours) provided rather than copying the
-hexadecimal (hex) colour values. For example, use `$govuk-brand-colour` rather
-than `{{ colours.applied['Brand colour'][0]['colour'] | trim }}`.
-This means that your service will always use the most recent colour palette
-whenever you update.
-
-Only use the variables in the context they're designed for. In all other cases,
-you should reference the [colour palette](#colour-palette) directly. For
-example, if you wanted to use red, you should
-use `govuk-colour("red")` rather than `$govuk-error-colour`.
-
-<table class="govuk-body app-colour-list" summary="Table of main colours">
-  <tbody>
-  {# colours is an object built by ./lib/colours.js based on data defined in ./data/colours.json #}
-  {% for groupName, group in colours.applied %}
-    <tr>
-      <td colspan="3">
-        <h3 class="govuk-heading-m {% if not loop.first %}govuk-!-padding-top-6{% endif %}">
-        {{groupName}}
-        </h3>
-      </td>
-    </tr>
-    {% for colour in group %}
-      <tr class="app-colour-list-row">
-        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
-          <span class="app-swatch {% if colour.colour == "#ffffff" %}app-swatch-border{% endif %}" style="background-color:{{colour.colour}}"></span>
-          <code>{{colour.name}}</code>
-        </th>
-        <td class="app-colour-list-column app-colour-list-column--colour">
-          <code>{{colour.colour}}</code>
-        </td>
-        <td class="app-colour-list-column app-colour-list-column--notes">
-          {{colour.notes}}
-        </td>
-      </tr>
-    {% endfor %}
-  {% endfor %}
-  </tbody>
-</table>
+You must make sure that the contrast ratio of text and interactive elements in your service
+meets [level AA of the Web Content Accessibility Guidelines
+(WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum). For this reason, the brand's primary green ($lbs-green-1:
+#00856a;) has been altered to provide sufficient contrast (the original value is #008D71 which only allows a contrast
+ratio of 4.15:1).
 
 ## Colour palette
 
 Use these colours for supporting materials like illustrations, or in custom components where appropriate.
 
-To reference colours from the palette directly you should use the `govuk-colour`
-function. For example, `color: govuk-colour("blue")`.
+To reference colours from the palette directly you should use the `govuk-colour` or `lbs-colour` reference
+function. For example, `color: govuk-colour("blue")` or `color: $lbs-green-1`.
 
-Avoid using the palette colours if there is a Sass variable that is designed for
-your context. For example, if you are styling the error state of a component you
-should use the `$govuk-error-colour` Sass variable rather than
-`govuk-colour("red")`.
+Avoid using the palette colours if there is a Sass variable that is designed for your context. For example, if you are
+styling the error state of a component you should use the `$govuk-error-colour` Sass variable rather than
+`$lbs-red`.
 
 If you need to use tints of this palette, use either 25% or 50%.
 
-You can find departmental colours in the GOV.UK Frontend [_colours-organisations](https://github.com/alphagov/govuk-frontend/blob/main/src/govuk/settings/_colours-organisations.scss) file.
 
 <table class="govuk-body app-colour-list" summary="Table of extended colours">
   <tbody>
-  {% for name, colour in colours.palette %}
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Primary colours
+        </h3>
+      </td>
+    </tr>
     <tr class="app-colour-list-row">
       <th class="app-colour-list-column app-colour-list-column--name">
-        <span class="app-swatch {% if colour == "#ffffff" %}app-swatch-border{% endif %}" style="background-color:{{colour}}"></span>
-        <code>govuk-colour("{{name}}")</code>
+        <span class="app-swatch " style="background-color:#00856a"></span>
+        <code>$lbs-green-1</code>
       </th>
       <td class="app-colour-list-column app-colour-list-column--colour">
-        <code>{{colour}}</code>
+        <code>#00856a</code>
       </td>
       <td class="app-colour-list-column app-colour-list-column--notes"></td>
     </tr>
-  {% endfor %}
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#cf1643"></span>
+        <code>$lbs-red</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#cf1643</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#757474"></span>
+        <code>$lbs-grey</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#757474</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Secondary colours
+        </h3>
+      </td>
+    </tr>
+<tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#40a360"></span>
+        <code>$lbs-green-2</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#40a360</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#3466af"></span>
+        <code>$lbs-blue</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#3466af</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#00a3b6"></span>
+        <code>$lbs-teal</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#00a3b6</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#ec6723"></span>
+        <code>$lbs-orange</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#ec6723</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#84328a"></span>
+        <code>$lbs-purple</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#84328a</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
+    <tr class="app-colour-list-row">
+      <th class="app-colour-list-column app-colour-list-column--name">
+        <span class="app-swatch " style="background-color:#f9b34a"></span>
+        <code>$lbs-yellow</code>
+      </th>
+      <td class="app-colour-list-column app-colour-list-column--colour">
+        <code>#f9b34a</code>
+      </td>
+      <td class="app-colour-list-column app-colour-list-column--notes"></td>
+    </tr>
  </tbody>
+</table>
+
+## Main colours
+
+If you are using LBS Frontend or the LBS Prototype Kit, use
+the [Sass variables](https://frontend.design-system.service.gov.uk/sass-api-reference/#colours) provided rather than
+copying the hexadecimal (hex) colour values. For example, use `$govuk-brand-colour` rather
+than `{{ colours.applied['Brand colour'][0]['colour'] | trim }}`. This means that your service will always use the most
+recent colour palette whenever you update.
+
+The values assigned to some of the `$gov-` variables have been changed using overrides within the `lbs-frontend` package - the values below include these.
+
+Only use the variables in the context they're designed for. In all other cases, you should reference
+the [colour palette](#colour-palette) directly. For example, if you wanted to use red, you should
+use `govuk-colour("red")` rather than `$govuk-error-colour`.
+
+<table class="govuk-body app-colour-list" summary="Table of main colours">
+  <tbody>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m ">
+        Text
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#0b0c0c"></span>
+          <code>$govuk-text-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#0b0c0c</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#505a5f"></span>
+          <code>$govuk-secondary-text-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#505a5f</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Links
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#3466af"></span>
+          <code>$govuk-link-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#3466af</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#003078"></span>
+          <code>$govuk-link-hover-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#003078</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#1d3860"></span>
+          <code>$govuk-link-visited-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#1d3860</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#0b0c0c"></span>
+          <code>$govuk-link-active-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#0b0c0c</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Border
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#b1b4b6"></span>
+          <code>$govuk-border-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#b1b4b6</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#0b0c0c"></span>
+          <code>$govuk-input-border-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#0b0c0c</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Focus state
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#f9b34a"></span>
+          <code>$govuk-focus-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#f9b34a</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+          Only use this colour to indicate which element is focused on. For example, when a user tabs to an element with their keyboard.
+        </td>
+      </tr>
+
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#0b0c0c"></span>
+          <code>$govuk-focus-text-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#0b0c0c</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+
+        </td>
+      </tr>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Error state
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#cf1643"></span>
+          <code>$govuk-error-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#cf1643</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+          Use for error messages
+        </td>
+      </tr>
+
+
+    <tr>
+      <td colspan="3">
+        <h3 class="govuk-heading-m govuk-!-padding-top-6">
+        Success state
+        </h3>
+      </td>
+    </tr>
+      <tr class="app-colour-list-row">
+        <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+          <span class="app-swatch " style="background-color:#00856a"></span>
+          <code>$govuk-success-colour</code>
+        </th>
+        <td class="app-colour-list-column app-colour-list-column--colour">
+          <code>#00856a</code>
+        </td>
+        <td class="app-colour-list-column app-colour-list-column--notes">
+          Use for success messages
+        </td>
+      </tr>
+
+  </tbody>
 </table>

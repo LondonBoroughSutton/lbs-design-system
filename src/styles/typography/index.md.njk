@@ -11,16 +11,9 @@ show_page_nav: true
 
 ## Font
 
-If your service is on the service.gov.uk subdomain you must use the GDS Transport font.
+If your service is on the sutton.gov.uk domain, the brand font `Proxima Nova` will be applied. The brand font license will only allow use on this domain, you may see font errors on other domains due to the cross domain referrer policy.
 
-### When not to use the GDS Transport font
-
-If your service is publicly available on a subdomain other than service.gov.uk, use an alternative typeface like Helvetica or Arial.
-
-If you’re not sure whether you should use GDS Transport, do one of the following:
-
-  - [read the 'If your service is not on GOV.UK' section on 'Making your service look like GOV.UK'](https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk)
-  - [contact the Design System team](/get-in-touch/)
+If the brand font is not allowed, `arial` and `helvetica` will be prioritised as per the brand guidelines.
 
 ## Headings
 
@@ -35,6 +28,12 @@ For a [question page](/patterns/question-pages/), or pages with long headings, s
 If your page has lots of long form content, start with `govuk-heading-xl` for an `<h1>`, `govuk-heading-l` for an `<h2>`, and so on.
 
 {{ example({group: "styles", item: "typography", example: "headings-xl", html: true, open: true, size: "m"}) }}
+
+### Headings with decoration
+
+Decorative sections should be used sparingly.
+
+{{ example({group: "styles", item: "typography", example: "headings-decorative", html: true, open: true, size: "m"}) }}
 
 ### Headings with captions
 
@@ -115,7 +114,9 @@ Use the `govuk-link--no-visited-state` modifier class where it is not helpful to
 
 ### External links
 
-If it's an external link to a non-government website, make that clear in the link text. For example, 'read advice on writing link text from [name of organisation]'. There's no need to say explicitly that you're linking to an external site. [Do not use an external link icon](https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/).
+If it's an external link to a non-government website, make that clear in the link text.
+
+{{ example({group: "styles", item: "typography", example: "link-external", html: true, open: true}) }}
 
 ### Opening links in a new tab
 

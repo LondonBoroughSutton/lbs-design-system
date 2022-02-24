@@ -1,0 +1,12 @@
+---
+title: Card
+layout: layout-example.njk
+---
+{% from "LBS/components/card/macro.njk" import lbsCard %}
+
+{{ lbsCard({
+  "heading": {
+    "title": "Example heading"
+  },
+  "cardBodyHtml": "This is a description"
+}) }}

@@ -1,0 +1,28 @@
+---
+title: Page Group Navigation
+layout: layout-example.njk
+---
+
+{% from "LBS/components/page-group-navigation/macro.njk" import lbsPageGroupNavigation %}
+
+{{ lbsPageGroupNavigation({
+  "listItemIndex": 2,
+  "listItems": [
+    {
+      "text": "Item 1",
+      "href": "#"
+    },
+    {
+      "text": "Item 2",
+      "href": "#"
+    },
+    {
+      "text": "Item 3",
+      "href": "#"
+    },
+    {
+      "text": "Item 4",
+      "href": "#"
+    }
+  ]
+}) }}

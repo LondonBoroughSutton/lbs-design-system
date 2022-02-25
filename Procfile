@@ -1,1 +1,1 @@
-worker: node tasks/serve.js
+web: node tasks/serve.js

@@ -1,10 +1,10 @@
 {
-  "name": "govuk_design_system",
+  "name": "lbs_design_system",
   "private": true,
-  "description": "GOV.UK Design System",
+  "description": "LBS Design System based on GOVUK Design System",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alphagov/govuk-design-system.git"
+    "url": "git+https://github.com/LondonBoroughSutton/lbs-design-system/"
   },
   "author": "Government Digital Service developers",
   "license": "MIT",

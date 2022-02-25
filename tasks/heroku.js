@@ -14,7 +14,6 @@ const paths = require('../lib/paths.js') // specify paths to main working direct
 
 console.log('Hit')
 
-
 // Serve up public/ftp folder
 const serve = serveStatic(paths.public, { index: ['index.html', 'index.htm'] })
 
@@ -23,8 +22,10 @@ const server = http.createServer(function onRequest (req, res) {
   serve(req, res, finalhandler(req, res))
 })
 
+const PORT = process.env.PORT || 8080
+
 // Listen
-server.listen(8080)
+server.listen(PORT)
 
 // setup synchronised browser testing
 // metalsmith('./').use(serve())
